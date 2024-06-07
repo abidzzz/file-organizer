@@ -27,8 +27,7 @@ Since my ~/Downloads was filled with unorganized file types i had to make thisSi
   3. **Run the Script:**
      Open a terminal or command prompt, navigate to the directory where the script is saved, and run:
      ```sh
-     python organize_files.py
-    ```
+     python organize_files.py```
 
 ## Example
 
