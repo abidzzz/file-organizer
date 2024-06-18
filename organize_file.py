@@ -2,6 +2,7 @@ import os
 import shutil
 
 def organize_files_by_extension(directory, script_name):
+    n = 0
     # List all files in the directory
     for filename in os.listdir(directory):
         # Skip directories and the script file itself
@@ -24,12 +25,13 @@ def organize_files_by_extension(directory, script_name):
 
         # Move the file to the corresponding folder
         shutil.move(os.path.join(directory, filename), os.path.join(folder_path, filename))
+        n += 1
+    return n
 
 if __name__ == "__main__":
     # Get the current directory
     current_directory = os.getcwd()
     # Name of this script file
     script_file_name = os.path.basename(__file__)
-    organize_files_by_extension(current_directory, script_file_name)
-    print(f"Files organized in {current_directory}, excluding {script_file_name}")
-
+    n = organize_files_by_extension(current_directory, script_file_name)
+    print(f"{n} Files organized in {current_directory}, excluding {script_file_name}")
